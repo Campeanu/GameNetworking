@@ -3,9 +3,13 @@ cmake_minimum_required(VERSION 3.8)
 set(This Server)
 
 set(HEADERS
+    include/server/Player.h
+    include/server/Server.h
 )
 
 set(SOURCES
+    src/Player.cpp
+    src/Server.cpp
     src/main.cpp
 )
 
@@ -22,6 +26,8 @@ target_link_libraries(${This} PUBLIC
     sfml-window-d
     sfml-system-d
 )
+
+target_include_directories(${This} PUBLIC include)
 
 set_target_properties(${This} PROPERTIES
     FOLDER Networking/Server
